@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name ="viewport"content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="theme-color" content="#2196f3" />
+	<title>Portfolio</title>
+	<link rel="shortcut icon" type="image/ico" href="images&icons/batman.png">
+        <link rel="icon" type="image/ico" href="images&icons/batman.png">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Raleway:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+	<link id="theme" rel="stylesheet" href="light-theme.css">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+	
+	<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+
+	<link rel="stylesheet" type="text/css" href="loader.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<style type="text/css">
+	
+	
+	</style>
+	<script>
+		
+		
+
+		//adding preloader css animation
+		var count=0;
+	      var counter = setInterval(() => {
+	        if (count < 101) {
+	          $('.count').text(count + '%');
+	          $('.loader').css('width',count + '%');
+	          count ++
+	        }else{
+	          clearInterval(counter)
+	        }
+	      });
+$(document).ready(function(){
+////start// For automatically switching between dark & light theme on basis of system color scheme////
+const themeStylesheet = document.getElementById('theme');
+const themeToggle = document.getElementById('theme-toggle');
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      themeStylesheet.href = 'dark-theme.css';
+      themeToggle.innerText = 'Light';
+    } else {
+      themeStylesheet.href = 'light-theme.css';
+      themeToggle.innerText = 'Dark';
+    }
+
+///End////
+});
+//for nightmode/lightmode switching....
+
+document.addEventListener('DOMContentLoaded', () => {
+
+
+
+const themeStylesheet = document.getElementById('theme');
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+	// if it's light -> go dark
+	if(themeStylesheet.href.includes('light')){
+		themeStylesheet.href = 'dark-theme.css';
+		themeToggle.innerText = 'Light';
+	} else {
+		// if it's dark -> go light
+		themeStylesheet.href = 'light-theme.css';
+		themeToggle.innerText = 'Dark';
+	}
+})
+
+//Get the button
+var mybutton = document.getElementById("scrolltotop");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+mybutton.style.display = "block";
+} else {
+mybutton.style.display = "none";
+}
+}
+
+// When the user clicks on the button, scroll to the top of the document
+		$('#scrolltotop').on('click', ()=>{
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+		})
+
+
+
+})	
+document.addEventListener('DOMContentLoaded', () => {
+
+	//for nav links for mobile....
+	const linefornav = document.getElementById("linefornav");
+	const navlinks = document.getElementById("nav-links");
+	const links = document.getElementById("nav-links li");
+	const line1 = document.getElementById("line1");
+
+	linefornav.addEventListener('click', () => {
+		navlinks.classList.toggle("open");
+		linefornav.classList.toggle("cross");
+		
+	});
+
+	$('#nav-links li a').on('click' , ()=>{
+		$('#nav-links').toggleClass("open");
+		$(".linefornav").toggleClass("cross");
+	});
+
+
+});
+
+
+//adding animation effect to the page
+		$(document).ready(function(){
+    		$('.heading-part1').waypoint(function(direction){
+     			 $('.heading-part1').addClass('animate__fadeInDown')
+    		},{offset:'100%'})
+		});
+		$(document).ready(function(){
+    		$('.heading-part2').waypoint(function(direction){
+     			 $('.heading-part2').addClass('animate__fadeInUp')
+    		},{offset:'100%'})
+		});
+		$(document).ready(function(){
+    		$('.knowmore').waypoint(function(direction){
+     			 $('.knowmore').addClass('animate__fadeIn')
+    		},{offset:'100%'})
+		});
+		$(document).ready(function(){
+    		$('.about-part1').waypoint((direction)=>{
+     			 $('.about-part1').addClass('animate__fadeInRightBig')
+    		},{offset:'50%'})
+		});
+		  
+		$(document).ready(function(){
+    		$('.about-part2').waypoint(function(direction){
+     			 $('.about-part2').addClass('animate__fadeInLeftBig')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.tl-part1').waypoint(function(direction){
+     			 $('.tl-part1').addClass('animate__fadeInLeft')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.tl-partp').waypoint(function(direction){
+     			 $('.tl-partp').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.tl-part2').waypoint(function(direction){
+     			 $('.tl-part2').addClass('animate__fadeInRight')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.skills-part1').waypoint(function(direction){
+     			 $('.skills-part1').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.skills-part2').waypoint(function(direction){
+     			 $('.skills-part2').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.fw-part1').waypoint(function(direction){
+     			 $('.fw-part1').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.fw-part2').waypoint(function(direction){
+     			 $('.fw-part2').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.port-part1').waypoint(function(direction){
+     			 $('.port-part1').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.port-part2').waypoint(function(direction){
+     			 $('.port-part2').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.cont-part1').waypoint(function(direction){
+     			 $('.cont-part1').addClass('animate__fadeInLeftBig')
+    		},{offset:'60%'})
+		});
+		$(document).ready(function(){
+    		$('.cont-part2').waypoint(function(direction){
+     			 $('.cont-part2').addClass('animate__fadeInRightBig')
+    		},{offset:'60%'})
+		});
+		$(document).ready(function(){
+    		$('.cv-part1').waypoint(function(direction){
+     			 $('.cv-part1').addClass('animate__fadeInDown')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.sm-part1').waypoint(function(direction){
+     			 $('.sm-part1').addClass('animate__bounceIn')
+    		},{offset:'80%'})
+		});
+		$(document).ready(function(){
+    		$('.sm-part2').waypoint(function(direction){
+     			 $('.sm-part2').addClass('animate__fadeInUp')
+    		},{offset:'90%'})
+		});
+
+
+
+	</script>
+	
+	<style>
+		
+		
+	</style>
+</head>
+<body id="top">
+<!-- ********HEADER***************-->
+	
+	<div class="wrapper">
+	    <section>
+	      <div class="loader"></div>
+	      <div class="count"></div>
+	    </section>
+	</div>
+	
+  	
+
+	<nav>
+		<div class="linefornav" id="linefornav">
+		
+
+			<span></span>
+			<span></span>
+			<span></span>
+
+		</div>
+
+		<ul class="nav-links" id="nav-links">
+			<li><p>Mode : <button id="theme-toggle">Dark</button></p></li>
+	        
+	        
+			<li><a href="#top"> Home</a></li>
+			<li><a href="#about"> About Me</a></li>
+			<li><a href="#experience">Experience</a></li>
+			<li><a href="#education">Education</a></li>
+			<li><a href="#framework"> Skills</a></li>
+			<li><a href="#portfolio"> Projects</a></li>
+			<li><a href="#contact"> Contact Me</a></li>
+		
+		</ul>
+
+	</nav>
+
+
+
+<!-- ********HOMEPAGE***************-->
+	<div id="hero">
+		<div class="background-image"></div>
+		<h1 class="heading-part1 animate__animated">Hello, I'm Sai Ganesh</h1>
+		<!-- <h3 class="heading-part2 animate__animated">Thank you for visiting my portfolio</h3> -->
+		<a href="#about" style="font-family: 'Josefin Sans', sans-serif;" class="btn knowmore animate__animated ">Know More</a>
+		
+		<p id="scrolltotop" title="Go to top">Scroll to Top</p>		
+		
+
+	</div>
+	<!-- ********About***************-->
+	<div id="about" class="about">
+		<h3 class="title">About Me</h3>
+		<div id="two-cols">
+		<div class="about-image about-part1 animate__animated"><img style="border-radius: 60%;" src="images&icons/resized.jpg" alt="Sai Ganesh image"></div>
+		<div class="about-bio about-part2 animate__animated">
+			<p>
+				I am Sai Ganesh, currently working as a Research Assistant at BigLab!. I have authored and submitted research papers to IEEE, SIGMOD, and EDBT, with a focus on structured data extraction, tabular embeddings, and performance analysis of large language models (LLMs). I also gained experience as a data analyst intern at Grip Spark
+				
+			</p>
+		</div>
+				<!-- <p>&nbsp;</p> -->
+	</div>
+	
+	</div>
+	<hr>
+	<p class="tl-partp animate__animated" id="experience" style="text-align: center; font-size: 20px;font-family: 'Josefin Sans', sans-serif;">Work Experience</p><hr>
+	<div class="timeline">
+	  <div class="container left tl-part1 animate__animated">
+	    <div class="content">
+	      <h2>Research Assistant - Tallahassee, FL</h2>
+	      <h2>Sep 2023 - Present</h2>
+		  <p>&gt; Authored and Submitted papers in IEEE and EDBT.</p>
+		  <p>&gt; Table classification using ML, achieving 87% F1 score and 90% reduction in classification time</p>
+		  <p>&gt; Fine tuned LLMs T5 base, PaLM, GPT 3.5 Turbo for QA tasks on Medical Case Reports</p>
+
+	      
+	    </div>
+	  </div>
+	  <div class="container right tl-part2 animate__animated">
+	    <div class="content">
+	      <h2>Data Analyst - Remote</h2>
+		  <h2>Feb 2021 - Mar 2021</h2>
+		  <p>> Performed exploratory data analysis and applied descriptive statistics on terrorism data of 17,000+ incidents.</p>
+			<p>> Resolved data quality issues by analyzing outliers, handling missing values, and selecting 15 key features.</p>
+			<p>> Designed interactive Tableau dashboards with 10+ Key Indicators, enhancing data-driven decision-making</p>
+	      
+	    </div>
+	  </div>
+	</div><hr>
+
+
+	<p class="tl-partp animate__animated" id="education" style="text-align: center; font-size: 20px;font-family: 'Josefin Sans', sans-serif;">Education</p><hr>
+	<div class="timeline">
+	  <div class="container left tl-part1 animate__animated">
+	    <div class="content">
+	      <h2>Florida State University</h2>
+	      <h2>Aug 2023 - May 2025</h2>
+		  <h3>Master of Science in Data Science</h3>
+
+	      
+	    </div>
+	  </div>
+	  <div class="container right tl-part2 animate__animated">
+	    <div class="content">
+	      <h2>Sri Ramachandra Engineering and Technology</h2>
+		  <h2>Aug 2019 - Jun 2023</h2>
+	      <h3>Bachelor of Technology - CSE (AI & ML)</h3>
+	    
+	    </div>
+	  </div>
+	</div>
+	
+
+	<hr>
+		<div class="framework" id="framework">
+			<p style=" font-family: 'Josefin Sans', sans-serif;" class="fw-part1 animate__animated">Skills :</p><hr>
+			<div class="fwimg fw-part2 animate__animated">
+				<img class="fwf" src="framework png's/python.jpg" alt="python">
+				<img class="fwf" src="framework png's/mysql.png" alt="sql">
+				<img class="fwf" src="framework png's/powerbi.jpg" alt="powerbi">
+				<img class="fwf" src="framework png's/aws.png" alt="AWS">
+				<img class="fwf" src="framework png's/GCP.png" alt="GCP">
+				<img class="fwf" src="framework png's/tensorflow.png" alt="TensorFlow">
+				<img class="fwf" src="framework png's/git.jpg" alt="Git">
+				<img class="fwf" src="framework png's/tableau.png" alt="Tableau">
+				<img class="fwf" src="framework png's/ht5.png" alt="HTML">
+				<img class="fwf" src="framework png's/rstudio.jpg" alt="R studio">
+				<img class="fwf" src="framework png's/pandas.png" alt="pandas">
+				<img class="fwf" src="framework png's/seaborn.png" alt="seaborn">
+				<img class="fwf" src="framework png's/plotly.png" alt="plotly">
+				<img class="fwf" src="framework png's/numpy.png" alt="numpy">
+				<img class="fwf" src="framework png's/excel.jpg" alt="excel">
+				<img class="fwf" src="framework png's/scikit_learn.png" alt="scikit_learn">
+			</div>
+		</div><hr>
+
+	<div id="portfolio" class="portfolio">
+		<h3 class="title">Portfolio</h3>
+		<p class="port-part1 animate__animated">Take a look at my Featured works.</p>
+		<hr>
+		<ul style="justify-content: center;" class="grid port-part2 animate__animated">
+			<li class="large" style="background-image: url('images&icons/valorant_qa_chatbot.webp');">
+				<p id="po">Valorant QA ChatBot
+					<a href="https://github.com/gana36/VALORANT_QA_CHATBOT"></a>
+				</p>
+				<p id="lo">> A QA Chatbot takes user input. Converts to SQL using LLM. Queries on S3 using Athena. Retrives answers to plain text.</p>
+				<a href="#portfolio" class="btn" id="btnopen">Open</a>
+			</li>
+			<li class="large" style="background-image: url('images&icons/nba_salary.webp');">
+				<p id="po">NBA Salary Prediction
+					<a href="https://github.com/gana36/NBA_Salary"></a>
+				</p>
+				<p id="lo">> A ML model that estimates the salary of NBA player based on their performance and metrics</p>
+				<a href="#portfolio" class="btn" id="btnopen">Open</a>
+			</li>
+			<li class="large" style="background-image: url('images&icons/powerbi.jpg');">
+				<p id="po">Aurora Bank Analysis  
+					<a href="https://github.com/gana36/aurora_powerbi"></a>
+				</p>
+				<p id="lo">> A Power BI dashboard that enhances decision-making and provides actionable insights.</p>
+
+				<a href="#portfolio" class="btn" id="btnopen">Open</a>
+			</li>
+			<li class="large" style="background-image: url('images&icons/automatic_number.webp');">
+				<p id="po">Automatic Number Plate Recognition 
+					<a href="https://github.com/gana36/Automatic-Number-Plate-Recogntion"></a>
+				</p>
+				<p id="lo">> A real-time Deep Learning detection module that saves timestamp, snapshot of license plate, and license number</p>
+				<a href="#portfolio" class="btn" id="btnopen">Open</a>
+			</li>
+		</ul>
+	</div>
+	
+	<!-- Popup Section -->
+	<div id="projectPopup" class="popup">
+		<div class="popup-content">
+			<span class="close-btn" onclick="closePopup()">&times;</span>
+			<h2 id="popupTitle"></h2>
+			<img id="popupImage" src="" alt="Project Image">
+			<p id="popupDescription"></p>
+			<!-- Add the link placeholder here -->
+			<p id="popupLink"></p>
+		</div>
+	</div>
+	
+	<script>
+		// Open the popup with additional link
+		function openPopup(title, image, description, link) {
+			document.getElementById('popupTitle').innerText = title;
+			document.getElementById('popupImage').src = image;
+			document.getElementById('popupDescription').innerText = description;
+			document.getElementById('popupLink').innerHTML = link ? `<a href="${link}" target="_blank">Visit Project</a>` : '';
+			document.getElementById('projectPopup').style.display = 'block';
+		}
+	
+		// Close the popup
+		function closePopup() {
+			document.getElementById('projectPopup').style.display = 'none';
+		}
+	
+		// // Add click event to portfolio items to open the popup with appropriate data
+		// document.addEventListener('DOMContentLoaded', function () {
+		// 	document.querySelectorAll('.portfolio .grid li').forEach(item => {
+		// 		item.addEventListener('click', function () {
+		// 			let title = this.querySelector('#po').innerText;
+		// 			let image = this.style.backgroundImage.slice(5, -2);
+		// 			let description = this.querySelector('#lo').innerText;
+		// 			// Fetch the link from the "Link" anchor tag
+		// 			let link = this.querySelector('a[href*="github"]') ? this.querySelector('a[href*="github"]').href : '';
+		// 			openPopup(title, image, description, link);
+		// 		});
+		// 	});
+		// });
+		document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.portfolio .grid li').forEach(item => {
+        item.addEventListener('click', function () {
+            let title = this.querySelector('#po').innerText;
+            let image = this.style.backgroundImage.slice(5, -2);
+            
+            // Get all the paragraphs with id="lo" and join them together
+            let descriptions = Array.from(this.querySelectorAll('#lo')).map(p => p.innerText).join(' ');
+
+            // Fetch the link from the "Link" anchor tag
+            let link = this.querySelector('a[href*="github"]') ? this.querySelector('a[href*="github"]').href : '';
+            openPopup(title, image, descriptions, link);
+        });
+    });
+});
+	</script>
+	
+	<style>
+		.popup {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.8);
+			justify-content: center;
+			align-items: center;
+		}
+	
+		.popup-content {
+			background: #222;
+			padding: 20px;
+			border-radius: 8px;
+			text-align: center;
+			color: white;
+			max-width: 500px;
+			margin: auto;
+		}
+	
+		.popup-content img {
+			max-width: 100%;
+			border-radius: 5px;
+			margin-bottom: 15px;
+		}
+	
+		.close-btn {
+			position: absolute;
+			top: 10px;
+			right: 20px;
+			font-size: 24px;
+			cursor: pointer;
+			color: white;
+		}
+	</style>
+	
+	<hr>
+	
+	<!-- *********CONTACT**************-->
+	<div><h3 class="title">Achievements and Certifications</h3></div><hr>
+	<div id="contact">
+			<ul class="grid">
+				<!-- <li style="font-family: 'Josefin Sans', sans-serif;" class="cont-part1 animate__animated"><i style="font-size: 30px;color:  #2196f3;" class="fa fa-location-arrow" aria-hidden="true"></i><br><br>
+					<p>Tallahassee, FL<br></p>
+				</li> -->
+				<li style="font-family: 'Josefin Sans', sans-serif;" class="cont-part1 animate__animated">
+					<i style="font-size: 30px;color:  #2196f3;" class="fas fa-newspaper" aria-hidden="true"></i><br><br>
+					<p>Published and Submitted Papers to Peer Reviewed Journals<br></p>
+				</li>
+				<li style="font-family: 'Josefin Sans', sans-serif;" class="cont-part1 animate__animated">
+					<i style="font-size: 30px;color:  #2196f3;" class="fas fa-code" aria-hidden="true"></i><br><br>
+					<p>Backed 4th place in AI for All Hackathon<br></p>
+				
+				</li>
+				<!-- <i class='fas fa-award'></i> -->
+				
+
+				<li class="cont-part2 animate__animated"><i style="font-size: 30px;color:  #2196f3;" class="fas fa-address-card"></i><br><br>
+					<p style="font-family: 'Josefin Sans', sans-serif;">Maths and Linear Algebra (Deeplearning.AI)</p>
+					<p>Full Stack Data Science (Ineuron.AI)</p></li>
+			</ul>
+	</div><hr>
+
+
+	<!-- *********FOOTER**************-->
+	<div class="download-cv">
+		<a href="sai ganesh resume ph.pdf" class="download-button" download>
+			<span>Download CV</span>
+			<i class="fas fa-download"></i>
+		</a>
+	</div>
+	
+	<!-- *********FOOTER**************-->
+	<footer id="social-media">
+		<ul class="sm-part1 animate__animated">
+		
+			<li><a href="https://www.linkedin.com/in/saiganeshakula/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+			<li><a href="https://github.com/gana36/" target="_blank"><i class="fab fa-github"></i></a></li>
+			<li><a href="mailto:saiganeshakagana@gmail.com?subject=Hello, I'm ...&body=I have a job for you...." target="_blank"><i class="far fa-envelope"></i></a></li>
+		</ul>
+		<p class="sm-part2 animate__animated">Thank you for visiting !</p>
+		<p class="sm-part2 animate__animated">&ldquo; Play Hard &rdquo;</p>
+		<p class="sm-part2 animate__animated">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Made with <span style="color: red"class="heart">❤</span> </p>	
+	</footer>
+
+
+</body>
+</html>
